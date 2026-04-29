@@ -1,0 +1,664 @@
+{
+  "cards": [
+    {
+      "id": 0,
+      "name": "Amoebapod",
+      "type": "defender",
+      "realm": "ocean",
+      "level": "3",
+      "power": "90",
+      "effect_type": "void"
+    },
+    {
+      "id": 1,
+      "name": "Animech Cells",
+      "type": "effector",
+      "effect_type": "permanent"
+    },
+    {
+      "id": 2,
+      "name": "Animech Missile Hippo",
+      "type": "defender",
+      "realm": "fire",
+      "level": "8",
+      "power": "340",
+      "effect_type": "oat"
+    },
+    {
+      "id": 3,
+      "name": "Animech Monkrane",
+      "type": "defender",
+      "realm": "forest",
+      "level": "4",
+      "power": "140",
+      "effect_type": "play"
+    },
+    {
+      "id": 4,
+      "name": "Animech Turbo Shark",
+      "type": "defender",
+      "realm": "ocean",
+      "level": "6",
+      "power": "260",
+      "effect_type": "play"
+    },
+    {
+      "id": 5,
+      "name": "Aqlantis",
+      "type": "effector",
+      "effect_type": "play"
+    },
+    {
+      "id": 6,
+      "name": "Aqua Juice",
+      "type": "effector",
+      "effect_type": "play"
+    },
+    {
+      "id": 7,
+      "name": "Aquakraka",
+      "type": "defender",
+      "realm": "ocean",
+      "level": "4",
+      "power": "200",
+      "effect_type": "vanilla"
+    },
+    {
+      "id": 8,
+      "name": "Aquatomic Abomination",
+      "type": "defender",
+      "realm": "ocean",
+      "level": "9",
+      "power": "380",
+      "effect_type": "oat"
+    },
+    {
+      "id": 9,
+      "name": "AWOAT",
+      "type": "defender",
+      "realm": "ocean",
+      "level": "6",
+      "power": "240",
+      "effect_type": "void"
+    },
+    {
+      "id": 10,
+      "name": "Beast-In-A-Box",
+      "type": "defender",
+      "realm": "dark",
+      "level": "5",
+      "power": "100",
+      "effect_type": "void"
+    },
+    {
+      "id": 11,
+      "name": "Block Juice",
+      "type": "effector",
+      "effect_type": "play"
+    },
+    {
+      "id": 12,
+      "name": "Blorglob",
+      "type": "defender",
+      "realm": "fire",
+      "level": "2",
+      "power": "100",
+      "effect_type": "vanilla"
+    },
+    {
+      "id": 13,
+      "name": "Blub Blast",
+      "type": "defender",
+      "realm": "ocean",
+      "level": "2",
+      "power": "70",
+      "effect_type": "vanilla"
+    },
+    {
+      "id": 14,
+      "name": "Blubatron 5000",
+      "type": "defender",
+      "realm": "ocean",
+      "level": "8",
+      "power": "320",
+      "effect_type": "play"
+    },
+    {
+      "id": 15,
+      "name": "Blubreator",
+      "type": "effector",
+      "effect_type": "oat"
+    },
+    {
+      "id": 16,
+      "name": "BOB 3611",
+      "type": "defender",
+      "realm": "desert",
+      "level": "3",
+      "power": "110",
+      "effect_type": "void"
+    },
+    {
+      "id": 17,
+      "name": "Bolide Comet",
+      "type": "effector",
+      "effect_type": "play"
+    },
+    {
+      "id": 18,
+      "name": "Burrabug",
+      "type": "defender",
+      "realm": "desert",
+      "level": "6",
+      "power": "230",
+      "effect_type": "oat"
+    },
+    {
+      "id": 19,
+      "name": "Citadelephant",
+      "type": "defender",
+      "realm": "desert",
+      "level": "8",
+      "power": "360",
+      "effect_type": "oat"
+    },
+    {
+      "id": 20,
+      "name": "Darkwater Shaman",
+      "type": "defender",
+      "realm": "ocean",
+      "level": "10",
+      "power": "410",
+      "effect_type": "oat"
+    },
+    {
+      "id": 21,
+      "name": "Defendolution",
+      "type": "effector",
+      "effect_type": "react"
+    },
+    {
+      "id": 22,
+      "name": "De",
+      "type": "defender",
+      "realm": "desert",
+      "level": "4",
+      "power": "200",
+      "effect_type": "vanilla"
+    },
+    {
+      "id": 23,
+      "name": "Diabocadra",
+      "type": "defender",
+      "realm": "ocean",
+      "level": "7",
+      "power": "50",
+      "effect_type": "play"
+    },
+    {
+      "id": 24,
+      "name": "Dice Time Shifter",
+      "type": "effector",
+      "effect_type": "oat"
+    },
+    {
+      "id": 25,
+      "name": "Dice Phantom",
+      "type": "defender",
+      "realm": "desert",
+      "level": "4",
+      "power": "10",
+      "effect_type": "play"
+    },
+    {
+      "id": 26,
+      "name": "Doom Juice",
+      "type": "effector",
+      "effect_type": "play"
+    },
+    {
+      "id": 27,
+      "name": "Dragolodon",
+      "type": "defender",
+      "realm": "ocean",
+      "level": "8",
+      "power": "400",
+      "effect_type": "vanilla"
+    },
+    {
+      "id": 28,
+      "name": "Drankhor",
+      "type": "defender",
+      "realm": "ocean",
+      "level": "5",
+      "power": "150",
+      "effect_type": "play"
+    },
+    {
+      "id": 29,
+      "name": "Dunatomic Abomination",
+      "type": "defender",
+      "realm": "desert",
+      "level": "9",
+      "power": "450",
+      "effect_type": "vanilla"
+    },
+    {
+      "id": 30,
+      "name": "Evo-Lance",
+      "type": "effector",
+      "effect_type": "play"
+    },
+    {
+      "id": 31,
+      "name": "Eyes of the Oasis",
+      "type": "effector",
+      "effect_type": "play"
+    },
+    {
+      "id": 32,
+      "name": "Flareye",
+      "type": "defender",
+      "realm": "fire",
+      "level": "4",
+      "power": "140",
+      "effect_type": "void"
+    },
+    {
+      "id": 33,
+      "name": "Floating Temples of Tempfloaty",
+      "type": "effector",
+      "effect_type": "play"
+    },
+    {
+      "id": 34,
+      "name": "Frozzbozz",
+      "type": "defender",
+      "realm": "ocean",
+      "level": "3",
+      "power": "140",
+      "effect_type": "vanilla"
+    },
+    {
+      "id": 35,
+      "name": "Gobbostop",
+      "type": "evolver",
+      "realm": "ocean",
+      "level": "3",
+      "power": "240",
+      "effect_type": "void"
+    },
+    {
+      "id": 36,
+      "name": "Grand Witness of the Sands",
+      "type": "defender",
+      "realm": "desert",
+      "level": "6",
+      "power": "250",
+      "effect_type": "play"
+    },
+    {
+      "id": 37,
+      "name": "Grangler",
+      "type": "defender",
+      "realm": "ocean",
+      "level": "5",
+      "power": "190",
+      "effect_type": "play"
+    },
+    {
+      "id": 38,
+      "name": "Guzzlorp the Devourer",
+      "type": "effector",
+      "effect_type": "play"
+    },
+    {
+      "id": 39,
+      "name": "Hydroelectro Shot",
+      "type": "effector",
+      "effect_type": "play"
+    },
+    {
+      "id": 40,
+      "name": "Infinitotemus",
+      "type": "evolver",
+      "realm": "forest",
+      "level": "5",
+      "power": "440",
+      "effect_type": "oat"
+    },
+    {
+      "id": 41,
+      "name": "Jelly Fisht",
+      "type": "defender",
+      "realm": "ocean",
+      "level": "4",
+      "power": "100",
+      "effect_type": "void"
+    },
+    {
+      "id": 42,
+      "name": "Jubbablub",
+      "type": "defender",
+      "realm": "ocean",
+      "level": "4",
+      "power": "120",
+      "effect_type": "oat"
+    },
+    {
+      "id": 43,
+      "name": "Juice Reversal Station",
+      "type": "effector",
+      "effect_type": "react"
+    },
+    {
+      "id": 44,
+      "name": "Karakator Stalker",
+      "type": "defender",
+      "realm": "desert",
+      "level": "7",
+      "power": "340",
+      "effect_type": "vanilla"
+    },
+    {
+      "id": 45,
+      "name": "Karakator Summoner",
+      "type": "defender",
+      "realm": "desert",
+      "level": "4",
+      "power": "140",
+      "effect_type": "oat"
+    },
+    {
+      "id": 46,
+      "name": "Karronker",
+      "type": "evolver",
+      "realm": "desert",
+      "level": "4",
+      "power": "320",
+      "effect_type": "void"
+    },
+    {
+      "id": 47,
+      "name": "Kaznakan Serpent",
+      "type": "evolver",
+      "realm": "ocean",
+      "level": "4",
+      "power": "340",
+      "effect_type": "void"
+    },
+    {
+      "id": 48,
+      "name": "Kazonk Kolossus",
+      "type": "defender",
+      "realm": "desert",
+      "level": "7",
+      "power": "310",
+      "effect_type": "oat"
+    },
+    {
+      "id": 49,
+      "name": "Kazonkling",
+      "type": "defender",
+      "realm": "desert",
+      "level": "2",
+      "power": "100",
+      "effect_type": "vanilla"
+    },
+    {
+      "id": 50,
+      "name": "Kazonk",
+      "type": "defender",
+      "realm": "desert",
+      "level": "5",
+      "power": "160",
+      "effect_type": "play"
+    },
+    {
+      "id": 51,
+      "name": "Kranchon",
+      "type": "evolver",
+      "realm": "ocean",
+      "level": "5",
+      "power": "500",
+      "effect_type": "vanilla"
+    },
+    {
+      "id": 52,
+      "name": "Kranpole",
+      "type": "evolver",
+      "realm": "ocean",
+      "level": "1",
+      "power": "60",
+      "effect_type": "oat"
+    },
+    {
+      "id": 53,
+      "name": "Kreele",
+      "type": "evolver",
+      "realm": "ocean",
+      "level": "2",
+      "power": "200",
+      "effect_type": "vanilla"
+    },
+    {
+      "id": 54,
+      "name": "Kronk",
+      "type": "evolver",
+      "realm": "desert",
+      "level": "3",
+      "power": "250",
+      "effect_type": "oat"
+    },
+    {
+      "id": 55,
+      "name": "Mace of the Mad 6",
+      "type": "effector",
+      "effect_type": "react"
+    },
+    {
+      "id": 56,
+      "name": "Magmol",
+      "type": "defender",
+      "realm": "fire",
+      "level": "5",
+      "power": "250",
+      "effect_type": "vanilla"
+    },
+    {
+      "id": 57,
+      "name": "Manflaki",
+      "type": "defender",
+      "realm": "fire",
+      "level": "4",
+      "power": "200",
+      "effect_type": "vanilla"
+    },
+    {
+      "id": 58,
+      "name": "Mark of Kranchon",
+      "type": "effector",
+      "effect_type": "play"
+    },
+    {
+      "id": 59,
+      "name": "Memory Crusher",
+      "type": "effector",
+      "effect_type": "permanent"
+    },
+    {
+      "id": 60,
+      "name": "Mountitanus",
+      "type": "defender",
+      "realm": "desert",
+      "level": "10",
+      "power": "420",
+      "effect_type": "oat"
+    },
+    {
+      "id": 61,
+      "name": "Ock",
+      "type": "evolver",
+      "realm": "desert",
+      "level": "1",
+      "power": "80",
+      "effect_type": "oat"
+    },
+    {
+      "id": 62,
+      "name": "Odotem",
+      "type": "evolver",
+      "realm": "forest",
+      "level": "2",
+      "power": "140",
+      "effect_type": "void"
+    },
+    {
+      "id": 63,
+      "name": "Orbgabork",
+      "type": "defender",
+      "realm": "ocean",
+      "level": "2",
+      "power": "60",
+      "effect_type": "void"
+    },
+    {
+      "id": 64,
+      "name": "Pit of Bara'Kai",
+      "type": "effector",
+      "effect_type": "play"
+    },
+    {
+      "id": 65,
+      "name": "Rockabocka",
+      "type": "defender",
+      "realm": "desert",
+      "level": "6",
+      "power": "0",
+      "effect_type": "play"
+    },
+    {
+      "id": 66,
+      "name": "Ronky",
+      "type": "evolver",
+      "realm": "desert",
+      "level": "2",
+      "power": "200",
+      "effect_type": "vanilla"
+    },
+    {
+      "id": 67,
+      "name": "Scale of Betrayal",
+      "type": "effector",
+      "effect_type": "react"
+    },
+    {
+      "id": 68,
+      "name": "Sinister Step Stones",
+      "type": "effector",
+      "effect_type": "play"
+    },
+    {
+      "id": 69,
+      "name": "Sir Turreton",
+      "type": "defender",
+      "realm": "desert",
+      "level": "5",
+      "power": "250",
+      "effect_type": "vanilla"
+    },
+    {
+      "id": 70,
+      "name": "Snowfreak",
+      "type": "defender",
+      "realm": "ocean",
+      "level": "7",
+      "power": "300",
+      "effect_type": "void"
+    },
+    {
+      "id": 71,
+      "name": "Stonegabork",
+      "type": "defender",
+      "realm": "desert",
+      "level": "2",
+      "power": "60",
+      "effect_type": "void"
+    },
+    {
+      "id": 72,
+      "name": "Terrarock Overlord",
+      "type": "evolver",
+      "realm": "desert",
+      "level": "5",
+      "power": "500",
+      "effect_type": "vanilla"
+    },
+    {
+      "id": 73,
+      "name": "Tot",
+      "type": "evolver",
+      "realm": "forest",
+      "level": "1",
+      "power": "80",
+      "effect_type": "void"
+    },
+    {
+      "id": 74,
+      "name": "Tripptote",
+      "type": "evolver",
+      "realm": "forest",
+      "level": "3",
+      "power": "300",
+      "effect_type": "vanilla"
+    },
+    {
+      "id": 75,
+      "name": "Trunkster",
+      "type": "defender",
+      "realm": "forest",
+      "level": "4",
+      "power": "200",
+      "effect_type": "vanilla"
+    },
+    {
+      "id": 76,
+      "name": "Ultemo Totemo",
+      "type": "evolver",
+      "realm": "forest",
+      "level": "4",
+      "power": "390",
+      "effect_type": "oat"
+    },
+    {
+      "id": 77,
+      "name": "Ultimate Sacrifice",
+      "type": "effector",
+      "effect_type": "play"
+    },
+    {
+      "id": 78,
+      "name": "Vessel Nestler",
+      "type": "defender",
+      "realm": "desert",
+      "level": "3",
+      "power": "90",
+      "effect_type": "void"
+    },
+    {
+      "id": 79,
+      "name": "Voidgrave Return",
+      "type": "effector",
+      "effect_type": "play"
+    },
+    {
+      "id": 80,
+      "name": "Zonk the Ancient",
+      "type": "defender",
+      "realm": "forest",
+      "level": "6",
+      "power": "130",
+      "effect_type": "void"
+    }
+  ]
+}
