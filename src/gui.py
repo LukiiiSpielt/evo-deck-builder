@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import filedialog
 from PIL import Image, ImageTk
 import card_loader
 from src import filter_cards
@@ -85,6 +86,22 @@ def start_gui():
 
     file_menu = Menu(menubar, tearoff=False)
     menubar.add_cascade(label="File", menu=file_menu)
+
+    export_menu = Menu(file_menu, tearoff=False)
+    file_menu.add_cascade(label="Export", menu=export_menu)
+
+    def export_untap():
+        file = filedialog.asksaveasfile(defaultextension=".txt",
+                                        filetypes=[("Text file:", ".txt")])
+        suffix = " - Sample"
+        modified_card_names = [line + suffix for line in deck_list.get(0, END)]
+        modified_evo_names = [line + suffix for line in evo_deck_list.get(0, END)]
+        filetext = f"//deck-1\n{"\n".join(modified_card_names)}\n\n//deck-2\n{"\n".join(modified_evo_names)}"
+        file.write(filetext)
+        file.close()
+
+
+    export_menu.add_command(label="Export to Untap", command=export_untap)
 
     filter_menu = Menu(menubar, tearoff=False)
     menubar.add_cascade(label="Filter", menu=filter_menu)
