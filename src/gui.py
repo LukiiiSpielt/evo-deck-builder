@@ -7,6 +7,7 @@ import filter_cards
 
 current_card = None
 card_list = None
+list_cards = []
 name_to_id = {card["name"]: card["id"] for card in card_loader.cards}
 
 def card_selected(evt):
@@ -31,12 +32,33 @@ def start_gui():
     window.geometry("1200x800")
     window.resizable(False, False)
 
-    card_list = Listbox(window, bg=bg_color, font=("Arial", 20))
-    card_list.pack(side="left", fill="y")
+    list_frame = Frame(window, bg="pink")
+    list_frame.pack(side="left", fill="y")
+
+    search_var = StringVar()
+    search_bar = Entry(list_frame, textvariable=search_var, font=("Arial", 20))
+    search_bar.pack(side="top")
+
+
+    card_list = Listbox(list_frame, bg=bg_color, font=("Arial", 20))
+    card_list.pack(side="bottom", fill="y", expand=True)
     card_list.bind("<<ListboxSelect>>", card_selected)
 
     for n in card_loader.cards:
+        global list_cards
         card_list.insert(END, n["name"])
+        list_cards = card_list.get(0, END)
+
+    def search(*args):
+        global list_cards
+        search_term = search_var.get()
+
+        matching_suggestions = [card for card in list_cards if card.lower().startswith(search_term.lower())]
+        card_list.delete(0, END)
+        for card in matching_suggestions:
+            card_list.insert(END, card)
+
+    search_bar.bind("<Return>", search)
 
     dummy_img = PhotoImage(file=card_loader.dummy_path)
     current_card = Label(window, image=dummy_img)
@@ -88,6 +110,24 @@ def start_gui():
     file_menu = Menu(menubar, tearoff=False)
     menubar.add_cascade(label="File", menu=file_menu)
 
+    def new_deck():
+        deck_list.delete(0, "end")
+        evo_deck_list.delete(0, "end")
+
+    file_menu.add_command(label="New deck", command=new_deck)
+
+    def open_json():
+        file = filedialog.askopenfile(filetypes=[("JSON file:", ".json")])
+        content = json.load(file)
+        deck_list.delete(0, "end")
+        evo_deck_list.delete(0, "end")
+        for card in content["main_deck"]:
+            deck_list.insert(END, f"{card["quantity"]} {card["card_name"]}")
+        for card in content["evo_deck"]:
+            evo_deck_list.insert(END, f"{card["quantity"]} {card["card_name"]}")
+
+    file_menu.add_command(label="Open", command=open_json)
+
     export_menu = Menu(file_menu, tearoff=False)
     file_menu.add_cascade(label="Export", menu=export_menu)
 
@@ -108,20 +148,20 @@ def start_gui():
                                        filetypes=[("JSON file:", ".json")])
         data = {"main_deck": [], "evo_deck": []}
         for card in deck_list.get(0, END):
-            quantaty, *name_parts = card.split()
+            quantity, *name_parts = card.split()
             card_name = " ".join(name_parts)
             data["main_deck"].append({
                 "card_id": name_to_id[card_name],
                 "card_name": card_name,
-                "quantaty": int(quantaty)
+                "quantity": int(quantity)
             })
         for card in evo_deck_list.get(0, END):
-            quantaty, *name_parts = card.split()
+            quantity, *name_parts = card.split()
             card_name = " ".join(name_parts)
             data["evo_deck"].append({
                 "card_id": name_to_id[card_name],
                 "card_name": card_name,
-                "quantaty": int(quantaty)
+                "quantity": int(quantity)
             })
         json_data = json.dumps(data, indent=4)
         file.write(json_data)
@@ -177,6 +217,7 @@ def start_gui():
         )
 
     def apply_filters():
+        global list_cards
         filtered_cards = filter_cards.apply_filters(selected_type.get(),
                                                     selected_realm.get(),
                                                     selected_level.get(),
@@ -192,7 +233,7 @@ def start_gui():
         else:
             for card in filtered_cards:
                 card_list.insert(END, card["name"])
-
+        list_cards = card_list.get(0, END)
     menubar.add_command(label="Apply filters", command=apply_filters)
 
     window.mainloop()
