@@ -1,11 +1,19 @@
 import json
 import os
 import re
+import sys
 
-project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-full_json_path = os.path.join(project_root, "data", "cards.json")
-dummy_path = os.path.join(project_root, "assets", "dummy_img.png")
-card_img_path = os.path.join(project_root, "assets","cards")
+
+def resource_path(relative_path):
+    try:
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    return os.path.join(base_path, relative_path)
+
+full_json_path = resource_path("data/cards.json")
+dummy_path = resource_path("assets/dummy_img.png")
+card_img_path = resource_path("assets/cards")
 
 
 

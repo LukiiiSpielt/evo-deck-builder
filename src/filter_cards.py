@@ -1,4 +1,4 @@
-from src import card_loader
+import card_loader
 
 
 def apply_filters(type_filter, realm_filter, level_filter, effect_filter):

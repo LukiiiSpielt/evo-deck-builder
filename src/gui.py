@@ -1,8 +1,9 @@
+import json
 from tkinter import *
 from tkinter import filedialog
 from PIL import Image, ImageTk
 import card_loader
-from src import filter_cards
+import filter_cards
 
 current_card = None
 card_list = None
@@ -100,8 +101,33 @@ def start_gui():
         file.write(filetext)
         file.close()
 
-
     export_menu.add_command(label="Export to Untap", command=export_untap)
+
+    def export_json():
+        file = filedialog.asksaveasfile(defaultextension=".json",
+                                       filetypes=[("JSON file:", ".json")])
+        data = {"main_deck": [], "evo_deck": []}
+        for card in deck_list.get(0, END):
+            quantaty, *name_parts = card.split()
+            card_name = " ".join(name_parts)
+            data["main_deck"].append({
+                "card_id": name_to_id[card_name],
+                "card_name": card_name,
+                "quantaty": int(quantaty)
+            })
+        for card in evo_deck_list.get(0, END):
+            quantaty, *name_parts = card.split()
+            card_name = " ".join(name_parts)
+            data["evo_deck"].append({
+                "card_id": name_to_id[card_name],
+                "card_name": card_name,
+                "quantaty": int(quantaty)
+            })
+        json_data = json.dumps(data, indent=4)
+        file.write(json_data)
+        file.close()
+
+    export_menu.add_command(label="Export as json", command=export_json)
 
     filter_menu = Menu(menubar, tearoff=False)
     menubar.add_cascade(label="Filter", menu=filter_menu)
