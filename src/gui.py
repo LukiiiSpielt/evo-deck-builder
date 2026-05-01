@@ -90,15 +90,40 @@ def start_gui():
     opt = OptionMenu(add_frame, selected_option, *options)
     opt.pack(side="left")
 
+    def update_deck_count():
+        deck_count = 0
+        for card in deck_list.get(0, END):
+            deck_count = deck_count + int(card[:1])
+            deck_count_label.config(text=f"Cards in Deck: {deck_count}")
+        if deck_count < 40 or deck_count > 50:
+            deck_count_label.config(fg="red")
+        else:
+            deck_count_label.config(fg="black")
+
+        defender_count = 0
+        for card in deck_list.get(0, END):
+            if card_loader.cards[name_to_id[card[2:]]]["type"] == "defender":
+                defender_count = defender_count + int(card[:1])
+
+        effector_count = 0
+        for card in deck_list.get(0, END):
+            if card_loader.cards[name_to_id[card[2:]]]["type"] == "effector":
+                effector_count = effector_count + int(card[:1])
+
+        card_type_count_label.config(text=f"(Defender: {defender_count}, Effector: {effector_count})")
 
     def add_to_deck():
         if card_list.curselection() == ():
             print("Nothing selected")
         else:
             if card_loader.cards[name_to_id[card_list.get(card_list.curselection())]]["type"] == "evolver":
-                evo_deck_list.insert(END, f"{selected_option.get()} {card_list.get(card_list.curselection())}")
+                if not any(element.endswith(card_list.get(card_list.curselection())) for element in evo_deck_list.get(0, END)):
+                    evo_deck_list.insert(END, f"1 {card_list.get(card_list.curselection())}")
             else:
-                deck_list.insert(END, f"{selected_option.get()} {card_list.get(card_list.curselection())}")
+                if not any(element.endswith(card_list.get(card_list.curselection())) for element in deck_list.get(0, END)):
+                    deck_list.insert(END, f"{selected_option.get()} {card_list.get(card_list.curselection())}")
+        update_deck_count()
+
 
     add_button = Button(add_frame, text= "Add to Deck", font=("Arial", 15), bg=bg_color, command=add_to_deck)
     add_button.pack(side="right")
@@ -113,6 +138,12 @@ def start_gui():
     remove_button = Button(window, text="Remove from Deck", font=("Arial", 15), bg=bg_color,command=remove_from_deck)
     remove_button.pack(side="top")
 
+    deck_count_label = Label(window, text="Cards in Deck: 0", pady=20, font=("Arial", 20), fg="red")
+    deck_count_label.pack(side="top")
+
+    card_type_count_label = Label(window, text="(Defender: 0, Effector: 0)", font=("Arial", 20))
+    card_type_count_label.pack(side="top")
+
     menubar = Menu(window, bg=bg_color, font=("Arial", 15))
     window.config(menu=menubar)
 
@@ -122,6 +153,7 @@ def start_gui():
     def new_deck():
         deck_list.delete(0, "end")
         evo_deck_list.delete(0, "end")
+        update_deck_count()
 
     file_menu.add_command(label="New deck", command=new_deck)
 
@@ -134,6 +166,7 @@ def start_gui():
             deck_list.insert(END, f"{card["quantity"]} {card["card_name"]}")
         for card in content["evo_deck"]:
             evo_deck_list.insert(END, f"{card["quantity"]} {card["card_name"]}")
+        update_deck_count()
 
     file_menu.add_command(label="Open", command=open_json)
 
