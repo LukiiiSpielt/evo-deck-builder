@@ -7,13 +7,20 @@ import filter_cards
 
 current_card = None
 card_list = None
+deck_list = None
+evo_deck_list = None
 list_cards = []
 name_to_id = {card["name"]: card["id"] for card in card_loader.cards}
 
 def card_selected(evt):
     w = evt.widget
-    if w == card_list and w.curselection():
-        get_card_image(w.get(w.curselection()))
+    selection = w.curselection()
+
+    if selection:
+        if w == card_list:
+            get_card_image(w.get(selection))
+        elif w == deck_list or w == evo_deck_list:
+            get_card_image(w.get(selection)[2:])
 
 
 def get_card_image(card_name):
@@ -25,7 +32,7 @@ def get_card_image(card_name):
     current_card.image = photo
 
 def start_gui():
-    global current_card, card_list
+    global current_card, card_list, deck_list, evo_deck_list, list_cards
 
     bg_color = "#999999"
     window = Tk()
@@ -69,9 +76,11 @@ def start_gui():
 
     deck_list = Listbox(deck_frame, bg=bg_color, font=("Arial", 20))
     deck_list.pack(side="top", expand=True, fill="y")
+    deck_list.bind("<<ListboxSelect>>", card_selected)
 
     evo_deck_list = Listbox(deck_frame, bg=bg_color, font=("Arial", 20), height=5)
     evo_deck_list.pack(side="bottom")
+    evo_deck_list.bind("<<ListboxSelect>>", card_selected)
 
     add_frame = Frame(window, pady= 20)
     add_frame.pack(side="top")
