@@ -133,7 +133,7 @@ def start_gui():
             deck_list.delete(deck_list.curselection())
         if not evo_deck_list.curselection() == ():
             evo_deck_list.delete(evo_deck_list.curselection())
-
+        update_deck_count()
 
     remove_button = Button(window, text="Remove from Deck", font=("Arial", 15), bg=bg_color,command=remove_from_deck)
     remove_button.pack(side="top")
@@ -277,6 +277,15 @@ def start_gui():
                 card_list.insert(END, card["name"])
         list_cards = card_list.get(0, END)
     menubar.add_command(label="Apply filters", command=apply_filters)
+
+    def reset_filters():
+        nonlocal selected_type, selected_realm, selected_level, selected_effect
+        selected_type = StringVar(value=card_types[0])
+        selected_realm = StringVar(value=card_realms[0])
+        selected_level = StringVar(value=card_levels[0])
+        selected_effect = StringVar(value=card_effects[0])
+        apply_filters()
+    menubar.add_command(label="Reset filters", command=reset_filters)
 
     window.mainloop()
 
