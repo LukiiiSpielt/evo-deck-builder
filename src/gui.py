@@ -120,8 +120,13 @@ def start_gui():
                 if not any(element.endswith(card_list.get(card_list.curselection())) for element in evo_deck_list.get(0, END)):
                     evo_deck_list.insert(END, f"1 {card_list.get(card_list.curselection())}")
             else:
-                if not any(element.endswith(card_list.get(card_list.curselection())) for element in deck_list.get(0, END)):
-                    deck_list.insert(END, f"{selected_option.get()} {card_list.get(card_list.curselection())}")
+                if any(element.endswith(card_list.get(card_list.curselection())) for element in deck_list.get(0, END)):
+                    old_card = [
+                        i for i, element in enumerate(deck_list.get(0, END))
+                        if card_list.get(card_list.curselection()) in element
+                    ]
+                    deck_list.delete(old_card[0])
+                deck_list.insert(END, f"{selected_option.get()} {card_list.get(card_list.curselection())}")
         update_deck_count()
 
 
