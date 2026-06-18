@@ -1,0 +1,28 @@
+name: Build
+on: [push]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os : [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{matrix.os}}
+
+    steps:
+      - uses: actions/checkout@v6
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.13
+      - name: Install Dependencies
+        run: | 
+          python -m pip install --upgrade pip
+          pip install pyinstaller
+          pip install -r requirements.txt
+      - name: Build executable
+        run: pyinstaller main.spec
+      - name: Upload pyinstaller results
+        uses: actions/upload-artifact@v4
+        with:
+          name: evoDeckBuilder-${{matrix.os}}
+          path: dist/
